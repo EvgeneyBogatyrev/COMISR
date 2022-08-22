@@ -5,7 +5,7 @@ import subprocess
 #    f.write("cd /model\n")
 #    f.write("python3 setup.py develop\n")
 
-#os.system("chmod 0777 /model/run.sh")
+os.system("chmod -R 0777 /result")
 #os.system("/model/run.sh")
 
 #videos = os.listdir("/dataset")
