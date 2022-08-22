@@ -31,11 +31,11 @@ import tensorflow.compat.v1 as tf
 import tensorflow.compat.v1.io.gfile as gfile
 import tensorflow_addons as tfa
 
-from comisr.lib.dataloader import inference_data_loader
-from comisr.lib.model import fnet
-from comisr.lib.model import generator_f
-import comisr.lib.ops as ops
-import comisr.metrics as metrics
+from lib.dataloader import inference_data_loader
+from lib.model import fnet
+from lib.model import generator_f
+import lib.ops as ops
+import metrics as metrics
 
 
 flags.DEFINE_string('input_lr_dir', None,
