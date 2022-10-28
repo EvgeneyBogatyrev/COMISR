@@ -101,6 +101,9 @@ def inference(
     output_name,
     output_ext,
 ):
+
+  checkpoint_path = "/model/weights/COMISR_weights/model.ckpt"
+  print("__________________" + checkpoint_path + "________________________")
   """Main inference function."""
   if checkpoint_path is None:
     raise ValueError('The checkpoint file is needed to performing the test.')
@@ -219,7 +222,7 @@ def inference(
       if i >= 5:
         name, _ = os.path.splitext(
             os.path.basename(str(inference_data.paths_LR[i])))
-        filename = output_name + '_' + name
+        filename = name
         out_path = os.path.join(image_dir, '%s.%s' % (filename, output_ext))
         print('saving image %s' % out_path)
         with tf.gfile.Open(out_path, 'wb') as image_file:
@@ -369,7 +372,7 @@ def main(_):
                 FLAGS.num_resblock, FLAGS.vsr_scale, FLAGS.checkpoint_path,
                 FLAGS.output_dir, output_pre, FLAGS.output_name,
                 FLAGS.output_ext)
-    compute_metrics(FLAGS)
+    #compute_metrics(FLAGS)
 
 
 if __name__ == '__main__':
